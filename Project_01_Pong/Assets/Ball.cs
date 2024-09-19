@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Timers;
+// using System.Timers;
 
 public class Ball : MonoBehaviour
 {
@@ -9,19 +9,13 @@ public class Ball : MonoBehaviour
     public Vector2 LocalVelocity;
     public Vector3 StartPos;
     public float Speed = 5.0f; 
-    public int BallCount = 1;
-    public System.Timers.Timer GameTimer;
 
     // Start is called before the first frame update
     void Start()
     {
-        ResetBall();
-        GameTimer = new System.Timers.Timer();
-        //directing to the function "WhenElapsed", no parentheses
-        GameTimer.Elapsed += OnTimedEvent;
-        GameTimer.Interval = 30000;
-        GameTimer.AutoReset = true;
-        GameTimer.Enabled = true;
+        if (gameObject.name == "BallA") {
+            ResetBall();
+        }        
     }
 
     // Update is called once per frame
@@ -32,7 +26,7 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision!");
+        // Debug.Log("Collision!");
 
         //Vector2.reflect() returns reflected velocity, LocalVelocity still needs
         //to be updated
@@ -46,26 +40,20 @@ public class Ball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Hit Trigger");
-        
+        // Debug.Log("Hit Trigger");
+        bool IsLeft = collision.gameObject.name == "LeftGoal";
+        GameObject.FindObjectOfType<GameManager>().IncrementScore(IsLeft);
         ResetBall();
     }
 
     public void ResetBall()
     {
+        gameObject.SetActive(true);
         transform.position = StartPos;
         r2d.GetComponent<Rigidbody2D>();
         r2d.velocity = new Vector2(Random.Range(-1f, 1f), (Random.Range(-1f, 1f)));
         r2d.velocity.Normalize();
         LocalVelocity = r2d.velocity * Speed;
-    }
-
-    private static void OnTimedEvent(object source, ElapsedEventArgs e) {
-        // if (BallCount == 1) {
-        //     BallCount += 1;
-        //     Debug.Log("Ball count at " + BallCount);
-        //     GameTimer.Dispose();
-        // }
     }
 }
 
@@ -73,6 +61,9 @@ public class Ball : MonoBehaviour
 //on game start(set timer)
 //if timer > 30 seconds {BallB.ResetBall()}
 //if timer > 60 seconds {BallC.ResetBall()}
+
+//grab current time in start
+//on update compare current time to 10sec later
 
 //---ball smack---
 //when fire pressed
