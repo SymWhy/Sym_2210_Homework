@@ -9,14 +9,13 @@ public class PaddleControl : MonoBehaviour
     public Rigidbody2D r2d;
 
     public string FireBtn;
-    public int FireDir;
-    public float BumperDist = 10f;
-    public float BumperSpd = 1f;
 
     public bool MoveFwd = false;
     public bool MoveBk = false;
     public float StartX;
     public float StartY;
+
+    public bool LeftPaddle = false;
 
     // Start is called before the first frame update
     void Start()
@@ -45,20 +44,41 @@ public class PaddleControl : MonoBehaviour
             MoveFwd = true;
         }
 
-        if (MoveFwd) {
-            transform.Translate(Vector3.right * 0.3f);
-            if (transform.position.x >= StartX + 1.3f) {
+        if (LeftPaddle) {
+            if (MoveFwd) {
+                transform.Translate(Vector3.right * 0.4f);
+             if (transform.position.x >= StartX + 1.3f) {
                 MoveFwd = false;
                 MoveBk = true;
+                }
+            }
+
+            if (MoveBk) {
+                transform.Translate(Vector3.left * 0.1f);
+                if (transform.position.x <= StartX) {
+                    MoveBk = false;
+                }
             }
         }
 
-        if (MoveBk) {
-            transform.Translate(Vector3.left * 0.1f);
-            if (transform.position.x <= StartX) {
-                MoveBk = false;
+        else {
+            if (MoveFwd) {
+                transform.Translate(Vector3.left * 0.3f);
+             if (transform.position.x <= StartX - 1.3f) {
+                MoveFwd = false;
+                MoveBk = true;
+                }
+            }
+
+            if (MoveBk) {
+                transform.Translate(Vector3.right * 0.1f);
+                if (transform.position.x >= StartX) {
+                    MoveBk = false;
+                }
             }
         }
+
+        
     }
 }
 
