@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
         
         CurrentTime = Time.time;
 
+//check for win condition, leave if
         if (StartTime + CurrentTime > SecsForBallB && !BallBOut) {
             BallBOut = true;
             BallB.ResetBall();
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+/// ball not deactivating
     public int IncrementScore(bool IsLeft) {
         if (IsLeft) {
             LeftScore = LeftScore + 1;
@@ -57,7 +59,10 @@ public class GameManager : MonoBehaviour
             LeftText.SetText(Score);
             if (LeftScore >= MaxScore) {
                 RestartButton.gameObject.SetActive(true);
-                GameObject.FindObjectOfType<Ball>().gameObject.SetActive(false);
+                Ball[] BallArray = GameObject.FindObjectsOfType<Ball>();
+                foreach (Ball myBall in BallArray) {
+                    myBall.gameObject.SetActive(false);
+                }
                 Debug.Log("Game over!");
             }
         }
@@ -70,7 +75,10 @@ public class GameManager : MonoBehaviour
             RightText.SetText(Score);
             if (RightScore >= MaxScore) {
                 RestartButton.gameObject.SetActive(true);
-                GameObject.FindObjectOfType<Ball>().gameObject.SetActive(false);
+                Ball[] BallArray = GameObject.FindObjectsOfType<Ball>();
+                foreach (Ball myBall in BallArray) {
+                    myBall.gameObject.SetActive(false);
+                }
                 Debug.Log("Game over!");
             }
         }
@@ -78,6 +86,7 @@ public class GameManager : MonoBehaviour
         return 0;
     }
 
+        //game not restarting
     public void RestartGame() {
         RestartButton.gameObject.SetActive(false);
         LeftScore = 0;
