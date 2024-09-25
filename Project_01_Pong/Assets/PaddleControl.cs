@@ -37,7 +37,7 @@ public class PaddleControl : MonoBehaviour
 
         //will not transform
         if (Input.GetButtonDown(FireBtn)) {
-            Debug.Log("Fire!");
+            // Debug.Log("Fire!");
             //transform.Translate(Vector3.right * 1);
             //record starting Y position
             StartY = transform.position.y;

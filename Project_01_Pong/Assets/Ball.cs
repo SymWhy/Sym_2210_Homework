@@ -7,12 +7,14 @@ public class Ball : MonoBehaviour
 {
     public Rigidbody2D r2d;
     public Vector2 LocalVelocity;
-    public Vector3 StartPos;
+    public Vector3 BallOrigin;
+    public Vector3 MyBallStart;
     public float Speed = 5.0f; 
 
     // Start is called before the first frame update
     void Start()
     {
+        MyBallStart = transform.position;
         if (gameObject.name == "BallA") {
             ResetBall();
         }        
@@ -36,6 +38,20 @@ public class Ball : MonoBehaviour
 
             //get info from collision ie normal, point of contact
             collision.GetContact(0).normal);
+            
+        PaddleControl MyPaddle = collision.gameObject.GetComponent<PaddleControl>();
+
+        if (MyPaddle != null) {
+
+            if (MyPaddle.name.Equals("Paddle1") && MyPaddle.MoveFwd) {
+                Debug.Log("Paddle 1 trying to accelerate the ball...");
+                LocalVelocity = LocalVelocity * 2;
+            }
+            else if (MyPaddle.name.Equals("Paddle2") && MyPaddle.MoveFwd) {
+                Debug.Log("Paddle 2 trying to accelerate the ball...");
+                LocalVelocity = LocalVelocity * 2;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -49,11 +65,16 @@ public class Ball : MonoBehaviour
     public void ResetBall()
     {
         gameObject.SetActive(true);
-        transform.position = StartPos;
+        transform.position = BallOrigin;
         r2d.GetComponent<Rigidbody2D>();
         r2d.velocity = new Vector2(Random.Range(-1f, 1f), (Random.Range(-1f, 1f)));
         r2d.velocity.Normalize();
         LocalVelocity = r2d.velocity * Speed;
+    }
+
+    public void ResetAllBalls() 
+    {
+        transform.position = MyBallStart;
     }
 }
 

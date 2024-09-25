@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     {
         StartTime = Time.time;
         CurrentTime = StartTime;
-        Debug.Log(CurrentTime);
+        // Debug.Log(CurrentTime);
     }
 
     // Update is called once per frame
@@ -93,7 +93,11 @@ public class GameManager : MonoBehaviour
         RightScore = 0;
         LeftText.SetText("0");
         RightText.SetText("0");
-        GameObject.FindObjectOfType<Ball>().gameObject.SetActive(true);
+        Ball[] BallArray = GameObject.FindObjectsOfType<Ball>();
+        foreach (Ball myBall in BallArray) {
+            myBall.gameObject.SetActive(true);
+            myBall.ResetAllBalls();
+        }
         
     }
 }
