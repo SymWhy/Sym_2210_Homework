@@ -156,8 +156,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   r2d: {fileID: 147804559}
   LocalVelocity: {x: 0, y: 0}
-  StartPos: {x: 0, y: 0, z: 0}
+  BallOrigin: {x: 0, y: 0, z: 0}
+  MyBallStart: {x: 0, y: 0, z: 0}
   Speed: 20
+  GameManagerObject: {fileID: 0}
 --- !u!50 &147804559
 Rigidbody2D:
   serializedVersion: 4
@@ -281,7 +283,7 @@ Transform:
   m_GameObject: {fileID: 147804557}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -5.15, y: 6.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -631,8 +633,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   r2d: {fileID: 553118153}
   LocalVelocity: {x: 0, y: 0}
-  StartPos: {x: 0, y: 0, z: 0}
+  BallOrigin: {x: 0, y: 0, z: 0}
+  MyBallStart: {x: 0, y: 0, z: 0}
   Speed: 20
+  GameManagerObject: {fileID: 0}
 --- !u!50 &553118153
 Rigidbody2D:
   serializedVersion: 4
@@ -1127,6 +1131,7 @@ RectTransform:
   - {fileID: 728180722}
   - {fileID: 1808727363}
   - {fileID: 995021923}
+  - {fileID: 2021189603}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1217,10 +1222,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 7e5bc73fd999047e0aa29174737564bc, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
-        m_Mode: 5
+      - m_Target: {fileID: 1130479386}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: RestartGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1431,8 +1436,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   r2d: {fileID: 1129992351}
   LocalVelocity: {x: 0, y: 0}
-  StartPos: {x: 0, y: 0, z: 0}
+  BallOrigin: {x: 0, y: 0, z: 0}
+  MyBallStart: {x: 0, y: 0, z: 0}
   Speed: 20
+  GameManagerObject: {fileID: 0}
 --- !u!50 &1129992351
 Rigidbody2D:
   serializedVersion: 4
@@ -1606,6 +1613,7 @@ MonoBehaviour:
   BallC: {fileID: 553118152}
   SecsForBallB: 5
   SecsForBallC: 10
+  Restarting: 0
 --- !u!4 &1130479387
 Transform:
   m_ObjectHideFlags: 0
@@ -2218,12 +2226,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021189600}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -481.3333, y: -249, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 890134636}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2127345824
 GameObject:
@@ -2370,5 +2378,4 @@ SceneRoots:
   - {fileID: 223647768}
   - {fileID: 2127345827}
   - {fileID: 890134636}
-  - {fileID: 2021189603}
   - {fileID: 1130479387}

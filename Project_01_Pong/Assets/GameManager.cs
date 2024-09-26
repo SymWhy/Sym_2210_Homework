@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     public float SecsForBallB = 5;
     public float SecsForBallC = 10;
 
+    public bool Restarting = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,9 +63,12 @@ public class GameManager : MonoBehaviour
                 RestartButton.gameObject.SetActive(true);
                 Ball[] BallArray = GameObject.FindObjectsOfType<Ball>();
                 foreach (Ball myBall in BallArray) {
-                    myBall.gameObject.SetActive(false);
+                    myBall.ResetAllBalls();
                 }
                 Debug.Log("Game over!");
+                Restarting = true;
+                BallBOut = true;
+                BallCOut = true;
             }
         }
 
@@ -77,9 +82,12 @@ public class GameManager : MonoBehaviour
                 RestartButton.gameObject.SetActive(true);
                 Ball[] BallArray = GameObject.FindObjectsOfType<Ball>();
                 foreach (Ball myBall in BallArray) {
-                    myBall.gameObject.SetActive(false);
+                    myBall.ResetAllBalls();
                 }
                 Debug.Log("Game over!");
+                Restarting = true;
+                BallBOut = true;
+                BallCOut = true;
             }
         }
 
@@ -93,11 +101,18 @@ public class GameManager : MonoBehaviour
         RightScore = 0;
         LeftText.SetText("0");
         RightText.SetText("0");
-        Ball[] BallArray = GameObject.FindObjectsOfType<Ball>();
-        foreach (Ball myBall in BallArray) {
-            myBall.gameObject.SetActive(true);
-            myBall.ResetAllBalls();
+        PaddleControl[] PaddleArray = GameObject.FindObjectsOfType<PaddleControl>();
+        foreach (PaddleControl myPaddle in PaddleArray) {
+            myPaddle.ResetPaddle();
         }
-        
+        //reset the timer
+        StartTime = Time.time;
+        BallBOut = false;
+        BallCOut = false;
+
+        //Restart BallA
+        GameObject.Find("BallA").GetComponent<Ball>().ResetBall();
+
+        Restarting = false;
     }
 }

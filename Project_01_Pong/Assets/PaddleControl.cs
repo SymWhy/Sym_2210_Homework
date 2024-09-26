@@ -22,6 +22,7 @@ public class PaddleControl : MonoBehaviour
     {
         //record default X position
         StartX = transform.position.x;
+        StartY = transform.position.y;
     }
 
     // Update is called once per frame
@@ -39,8 +40,6 @@ public class PaddleControl : MonoBehaviour
         if (Input.GetButtonDown(FireBtn)) {
             // Debug.Log("Fire!");
             //transform.Translate(Vector3.right * 1);
-            //record starting Y position
-            StartY = transform.position.y;
             MoveFwd = true;
         }
 
@@ -79,6 +78,10 @@ public class PaddleControl : MonoBehaviour
         }
 
         
+    }
+
+    public void ResetPaddle() {
+        transform.position = new Vector3(StartX, StartY, 0);
     }
 }
 
