@@ -9,11 +9,13 @@ public class PlayerMover : MonoBehaviour
     private Rigidbody2D MyRigidbody2D;
     public GameObject BulletPrefab;
     private List<Bullet> Bullets = new List<Bullet>();
+    public AudioSource BulletSoundSource;
 
     // Start is called before the first frame update
     void Start()
     {
         MyRigidbody2D = GetComponent<Rigidbody2D>(); 
+        BulletSoundSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -35,15 +37,16 @@ public class PlayerMover : MonoBehaviour
             //Instantiate<object type>(Object to build, potition, rotation)
             GameObject myBullet = GameObject.Instantiate(BulletPrefab, transform.position, transform.rotation);
             Bullets.Add(myBullet.GetComponent<Bullet>());
+            BulletSoundSource.Play();
         }
 
-        if(Input.GetKeyDown(KeyCode.X)) {
-            foreach(Bullet b in Bullets) {
-                Destroy(b.gameObject);
-                //you need to purge the array too or you will get an error
-            }
-            Bullets.Clear();
-        Debug.Log("Bullet list purged!");
-        }
+        // if(Input.GetKeyDown(KeyCode.X)) {
+        //     foreach(Bullet b in Bullets) {
+        //         Destroy(b.gameObject);
+        //         //you need to purge the array too or you will get an error
+        //     }
+        //     Bullets.Clear();
+        // Debug.Log("Bullet list purged!");
+        // }
     }
 }

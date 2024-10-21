@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class PlayerBullet : MonoBehaviour
 {
-    public float Speed = 5.0f;
-    
+    public float Speed;
+    public GameObject CoverPrefab;
+    public GameObject EnemyPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +20,8 @@ public class Bullet : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.name == "WallL" || collision.gameObject.name == "WallR" || collision.gameObject.name == "WallT" || collision.gameObject.name == "WallB") {
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.name == "Buffer" || collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Cover") {
             Destroy(this.gameObject);
         }
     }
