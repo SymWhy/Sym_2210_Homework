@@ -10,11 +10,15 @@ public class Alien : MonoBehaviour
     public int CurrentDirection = 0;
     public float timeToWait = 1.0f;
 
+
     // Start is called before the first frame update
     void Start()
     {
         MyRigidbody2D = GetComponent<Rigidbody2D>(); 
         CurrentDirection = 1;
+
+        
+        ExplosionSoundSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -39,9 +43,14 @@ public class Alien : MonoBehaviour
             if (CurrentDirection == 3) {
                 StartCoroutine(waitThenMoveRight());
             }
-            Debug.Log("Setting direction to down!");
+            //Debug.Log("Setting direction to down!");
             CurrentDirection = 2;
         }
+    }
+
+    public void KillMe() {
+        ExplosionSoundSource.Play();
+        Destroy(this.gameObject);
     }
 
     IEnumerator waitThenMoveLeft() {

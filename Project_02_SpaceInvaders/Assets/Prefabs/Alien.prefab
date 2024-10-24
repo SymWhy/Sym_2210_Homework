@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6893771951409067935}
   - component: {fileID: 4256936694235266349}
   - component: {fileID: 24654634464017880}
+  - component: {fileID: -2656340185645368887}
   m_Layer: 0
   m_Name: Alien
   m_TagString: Enemy
@@ -162,3 +163,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-2656340185645368887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5878553536428203524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a039e20ba5925984ba19c0bcb6720110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 1
+  CurrentDirection: 0
+  timeToWait: 1
+  ExplosionSoundSource: {fileID: 0}
+  ExplosionClip: {fileID: 8300000, guid: d0258840ea50a0148bdf36edada95692, type: 3}

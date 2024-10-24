@@ -21,7 +21,10 @@ public class PlayerBullet : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.name == "Buffer" || collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Cover") {
+        if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Cover") {
+            if (collision.gameObject.tag == "Enemy") {
+                collision.gameObject.GetComponent<Alien>().KillMe();
+            }
             Destroy(this.gameObject);
         }
     }
