@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMover : MonoBehaviour
@@ -10,6 +12,7 @@ public class PlayerMover : MonoBehaviour
     public GameObject BulletPrefab;
     private List<Bullet> Bullets = new List<Bullet>();
     public AudioSource BulletSoundSource;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +25,7 @@ public class PlayerMover : MonoBehaviour
     void Update()
     {
         float rotation = Input.GetAxis("Horizontal");
-        float fullRotation = rotation * RotationSpeed;
+        float fullRotation = rotation * RotationSpeed * 100 * -1;
         MyRigidbody2D.MoveRotation(MyRigidbody2D.rotation + (fullRotation * Time.deltaTime));
 
         if(Input.GetAxis("Vertical") > 0f)

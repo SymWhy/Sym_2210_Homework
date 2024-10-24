@@ -38,8 +38,11 @@ public class Asteroid : MonoBehaviour {
         }
 
         if(collision.gameObject.name == "Ship") {
+            //GetComponent<Script Containing The Function You Want To Call>.Function You Want To Call();
+            //GetComponent gets a script you want to use
+            collision.gameObject.GetComponent<FlashingSprite>().StartFlash();
             AsteroidSoundSource.Play();
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
         }
     }
 
