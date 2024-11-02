@@ -10,8 +10,11 @@ public class PlayerMover : MonoBehaviour
     public float RotationSpeed;
     private Rigidbody2D MyRigidbody2D;
     public GameObject BulletPrefab;
-    private List<Bullet> Bullets = new List<Bullet>();
+    //private List<Bullet> Bullets = new List<Bullet>();
     public AudioSource BulletSoundSource;
+    public GameObject ThrusterPoint;
+    public GameObject GunPoint;
+    public ParticleSystem Exhaust;
 
 
     // Start is called before the first frame update
@@ -32,6 +35,14 @@ public class PlayerMover : MonoBehaviour
         {
             //Debug.Log("Vector is : " + (transform.forward * (Speed * Input.GetAxis("Vertical"))));
             MyRigidbody2D.AddForce(transform.up * (Speed * Input.GetAxis("Vertical")));
+            Exhaust.Emit(1);
+
+            RaycastHit2D hit = Physics2D.Raycast(ThrusterPoint.transform.position, -transform.up);
+            if (hit) {
+                Debug.Log("I hit a " + hit.collider.gameObject.name);
+                Debug.DrawRay(transform.position, -transform.up * 3.0f);
+                hit.rigidbody.AddForce(-transform.up * 3.0f);
+            }
         }
         
         if(Input.GetButtonDown("Fire1")) {
@@ -39,8 +50,18 @@ public class PlayerMover : MonoBehaviour
 
             //Instantiate<object type>(Object to build, potition, rotation)
             GameObject myBullet = GameObject.Instantiate(BulletPrefab, transform.position, transform.rotation);
-            Bullets.Add(myBullet.GetComponent<Bullet>());
+            //Bullets.Add(myBullet.GetComponent<Bullet>());
             BulletSoundSource.Play();
+        }
+
+        if(Input.GetButton("Fire2")) {
+            RaycastHit2D hitAsteroid = Physics2D.Raycast(GunPoint.transform.position, transform.up * 10.0f);
+            if (hitAsteroid) {
+                        if (hitAsteroid.collider.gameObject.CompareTag("Asteroid")) {
+                            Debug.Log("Raycast hit an asteroid!");
+                            GameObject myBullet = GameObject.Instantiate(BulletPrefab, transform.position, transform.rotation);
+                        }
+            }
         }
 
         // if(Input.GetKeyDown(KeyCode.X)) {

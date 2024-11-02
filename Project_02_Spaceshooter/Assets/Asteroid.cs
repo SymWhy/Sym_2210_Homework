@@ -29,14 +29,16 @@ public class Asteroid : MonoBehaviour {
 
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.name == "Bullet(Clone)") {
+        if (collision.gameObject.tag == "Bullet") {
             //Debug.Log("Destroying asteroid...");
             AsteroidSoundSource.Play();
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
             //Destroy(gameObject);
             StartCoroutine(waitToSplode());
         }
+    }
 
+    private void OnCollisionEnter2D(Collision2D collision) {
         if(collision.gameObject.name == "Ship") {
             //GetComponent<Script Containing The Function You Want To Call>.Function You Want To Call();
             //GetComponent gets a script you want to use
@@ -50,6 +52,7 @@ public class Asteroid : MonoBehaviour {
     IEnumerator waitToSplode() {
         yield return new WaitForSecondsRealtime(1);
         Destroy(gameObject);
+        GameManager.GetGameManager().IncrementScore();
     }
 
 }

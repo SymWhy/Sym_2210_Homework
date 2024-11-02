@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
     public float xRange;
     public GameObject AsteroidPrefab;
     private List<Asteroid> Asteroids = new List<Asteroid>();
+    static GameManager _Instance;
+    public static GameManager GetGameManager() {
+        return _Instance;
+    }
+    private int Score = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -32,5 +37,10 @@ public class GameManager : MonoBehaviour
         xRange = yRange * Camera.main.aspect;
         yRange /= 2;
         xRange /= 2;
+    }
+
+    public void IncrementScore() {
+        Score++;
+        Debug.Log(Score);
     }
 }
