@@ -9,6 +9,7 @@ public class Alien : MonoBehaviour
     private Vector3[] Directions = {Vector3.zero, Vector3.right, Vector3.down, Vector3.left};
     public int CurrentDirection = 0;
     public float timeToWait = 1.0f;
+    public GameObject BulletPrefab;
 
 
     // Start is called before the first frame update
@@ -18,7 +19,6 @@ public class Alien : MonoBehaviour
         CurrentDirection = 1;
 
         
-        ExplosionSoundSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,8 +48,12 @@ public class Alien : MonoBehaviour
         }
     }
 
+    public void Fire() {
+        GameObject myBullet = GameObject.Instantiate(BulletPrefab, transform.position, Quaternion.Euler(0, 0, 180));
+    }
+
     public void KillMe() {
-        ExplosionSoundSource.Play();
+        GameManager.GetGameManager().PlayExplosion();
         Destroy(this.gameObject);
     }
 

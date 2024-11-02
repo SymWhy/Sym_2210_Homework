@@ -178,5 +178,4 @@ MonoBehaviour:
   Speed: 1
   CurrentDirection: 0
   timeToWait: 1
-  ExplosionSoundSource: {fileID: 0}
-  ExplosionClip: {fileID: 8300000, guid: d0258840ea50a0148bdf36edada95692, type: 3}
+  BulletPrefab: {fileID: 5760169142800837884, guid: 9bbf5265d794c9c4789b71efd91cfb53, type: 3}
