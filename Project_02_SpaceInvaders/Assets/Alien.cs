@@ -16,7 +16,6 @@ public class Alien : MonoBehaviour
     void Start()
     {
         MyRigidbody2D = GetComponent<Rigidbody2D>(); 
-        CurrentDirection = 1;
 
         
     }
@@ -53,6 +52,7 @@ public class Alien : MonoBehaviour
     }
 
     public void KillMe() {
+        GameManager.GetGameManager().RemoveAlien(this);
         GameManager.GetGameManager().PlayExplosion();
         Destroy(this.gameObject);
     }
