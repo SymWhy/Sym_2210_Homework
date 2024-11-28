@@ -22,6 +22,9 @@ public class PlayerMover : MonoBehaviour
     {
         MyRigidbody2D = GetComponent<Rigidbody2D>(); 
         BulletSoundSource = GetComponent<AudioSource>();
+
+        transform.localScale = Vector3.zero;
+        StartCoroutine(GrowShip(1f));
     }
 
     // Update is called once per frame
@@ -73,4 +76,25 @@ public class PlayerMover : MonoBehaviour
         // Debug.Log("Bullet list purged!");
         // }
     }
+
+    IEnumerator GrowShip(float TimeToGrow) {
+
+        float currentTime = Time.timeSinceLevelLoad;
+        float targetTime = currentTime + TimeToGrow;
+        float loopTime = currentTime;
+
+        while(loopTime < targetTime) {
+            //transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one, 0.2f); //dont use this
+            //this is how you use Lerp
+            //float totalTime = targetTime - currentTime;
+            //float t = (loopTime - currentTime) / totalTime;
+            float t = Mathf.InverseLerp(currentTime, targetTime, loopTime);
+            transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, GameManager.tween(t));
+            loopTime += Time.deltaTime;
+            yield return null;
+            
+        }
+        
+    }
+
 }

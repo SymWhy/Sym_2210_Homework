@@ -34,7 +34,7 @@ public class Asteroid : MonoBehaviour {
             AsteroidSoundSource.Play();
             //Destroy(collision.gameObject);
             //Destroy(gameObject);
-            StartCoroutine(waitToSplode());
+            StartCoroutine(waitToSplode(0.2f));
         }
     }
 
@@ -49,7 +49,22 @@ public class Asteroid : MonoBehaviour {
     }
 
     //coroutine
-    IEnumerator waitToSplode() {
+    IEnumerator waitToSplode(float TimeToShrink) {
+
+        gameObject.GetComponent<Collider2D>().enabled = false;
+        
+        float currentTime = Time.timeSinceLevelLoad;
+        float targetTime = currentTime + TimeToShrink;
+        float loopTime = currentTime;
+
+        while(loopTime < targetTime) {
+            float t = Mathf.InverseLerp(currentTime, targetTime, loopTime);
+            transform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, GameManager.tween(t));
+            loopTime += Time.deltaTime;
+            yield return null;
+            
+        }
+
         yield return new WaitForSecondsRealtime(1);
         Destroy(gameObject);
         GameManager.GetGameManager().IncrementScore();

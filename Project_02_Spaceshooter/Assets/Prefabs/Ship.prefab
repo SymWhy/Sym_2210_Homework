@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1769258544288388254}
   - component: {fileID: 6273053235674895862}
   - component: {fileID: 8945855303180234174}
+  - component: {fileID: 8664443973124421810}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3544858007383223081}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0015440919, y: -0, z: -0, w: 0.9999988}
-  m_LocalPosition: {x: 0, y: 0.00000090897083, z: -0.00058736757}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.83, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -126,6 +127,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 4
-  RotationSpeed: -1440
+  RotationSpeed: 5
   BulletPrefab: {fileID: 1833745272231963508, guid: e496e1700e18b1248a0188dbc705566e, type: 3}
   BulletSoundSource: {fileID: 0}
+  ThrusterPoint: {fileID: 0}
+  GunPoint: {fileID: 0}
+  Exhaust: {fileID: 0}
+--- !u!60 &8664443973124421810
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544858007383223081}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.28866667}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.5773587}
+      - {x: -0.5, y: -0.28866667}
+      - {x: 0.5, y: -0.28866667}
+  m_UseDelaunayMesh: 0
