@@ -8,6 +8,7 @@ public class Ship : MonoBehaviour
     public float Speed;
     public GameObject BulletPrefab;
     public AudioSource BulletSoundSource;
+    public bool BulletOut;
 
     
     // Start is called before the first frame update
@@ -28,10 +29,12 @@ public class Ship : MonoBehaviour
         transform.Translate(translation);
 
         if(Input.GetButtonDown("Fire1")) {
-
+            if (BulletOut != true) {
             //Instantiate<object type>(Object to build, potition, rotation)
-            GameObject myBullet = GameObject.Instantiate(BulletPrefab, transform.position, transform.rotation);
-            BulletSoundSource.Play();
+                GameObject myBullet = GameObject.Instantiate(BulletPrefab, transform.position, transform.rotation);
+                BulletOut = true;
+                BulletSoundSource.Play();
+            }
         }
     }
 }
