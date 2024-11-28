@@ -1,0 +1,721 @@
+fileFormatVersion: 2
+guid: b0a4f7dd4dedd9b42ae8c28d15b2c99c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 85
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 524
+        width: 88
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3897a0d1b6c3cae4789e9888dd9bb814
+      internalID: 1434016962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _1
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 534
+        width: 88
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c9dc6b506f5eeb4d8e3b3104d368c11
+      internalID: -496004953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _2
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 519
+        width: 102
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f2d850479092bf488d09f2340972121
+      internalID: 656632734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _3
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 520
+        width: 102
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16a0b73cf06beee49ac756f10c417519
+      internalID: 213371255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _4
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 443
+        width: 88
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be833f6fdd59e44ca38e3571600b996
+      internalID: 789287827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _5
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 455
+        width: 88
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baedd050177c5994cbde8db424663416
+      internalID: -1357437072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _6
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 421
+        width: 102
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41c1ace71343bed41b7b2109359e231f
+      internalID: -1294943789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _7
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 426
+        width: 102
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51d076675f2914b4b887459782f17a07
+      internalID: 1107972027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 357
+        width: 88
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f2b5cf6c33074d49a3b0f68510b17b2
+      internalID: -892204203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _9
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 378
+        width: 88
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67c8c04e08b5a844fbd459d7bb3def71
+      internalID: 2056327742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 328
+        width: 102
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6549076b17e79c54f9e5dcdbd910626b
+      internalID: -2117113647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _11
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 323
+        width: 102
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aa6bfe12f54b7a488d8f6686e0aaa97
+      internalID: 1661464433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _12
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 269
+        width: 88
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1923cad7e813df48be98204b2dc386b
+      internalID: -193375481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _13
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 275
+        width: 88
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d44d9765ae0926049b5c474f6856e9f6
+      internalID: 1516359040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _14
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 221
+        width: 102
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33b0ea9a34043e54999fa8e2299effb7
+      internalID: 1983117867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _15
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 225
+        width: 102
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09c5a54708f33004b950dbd6df23d117
+      internalID: -1516131598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _16
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 163
+        width: 106
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa3fae5e78e72d40b7aa10568a475e4
+      internalID: -1103690823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _17
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 114
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66772ace901d01c479bc1786976a9ad3
+      internalID: -670685563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _18
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 114
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 488c17e6d766dc445916cf0702539cb5
+      internalID: -397163392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _19
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 115
+        width: 58
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bd03d38d7c78124d8ca7c335a23de6f
+      internalID: -1090301292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _20
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 119
+        width: 58
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d2be70cb5e2ce54aa4c814a28d597bf
+      internalID: -1305195479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _21
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 96
+        width: 106
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d76cd16f0c61ae478645346d000c35b
+      internalID: -1299828727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _22
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 97
+        width: 106
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7602e8075cc591b4387afea304157932
+      internalID: 736083297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _23
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 19
+        width: 109
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 183d36bc77c1e6c48b8e31d62a003aab
+      internalID: -1784737120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _24
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 18
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c501f72625005e64a8bf17989fdc2e1e
+      internalID: 683542149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _25
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 24
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de008d5c051e3544b81adcfbe9a4297b
+      internalID: -1412113880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedrooms furniture -7closet-4 carpets- 18 beds _26
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 27
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c149cf230dc8ef4fa15d34c402c9b51
+      internalID: -279902896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      bedrooms furniture -7closet-4 carpets- 18 beds _0: 1434016962
+      bedrooms furniture -7closet-4 carpets- 18 beds _1: -496004953
+      bedrooms furniture -7closet-4 carpets- 18 beds _10: -2117113647
+      bedrooms furniture -7closet-4 carpets- 18 beds _11: 1661464433
+      bedrooms furniture -7closet-4 carpets- 18 beds _12: -193375481
+      bedrooms furniture -7closet-4 carpets- 18 beds _13: 1516359040
+      bedrooms furniture -7closet-4 carpets- 18 beds _14: 1983117867
+      bedrooms furniture -7closet-4 carpets- 18 beds _15: -1516131598
+      bedrooms furniture -7closet-4 carpets- 18 beds _16: -1103690823
+      bedrooms furniture -7closet-4 carpets- 18 beds _17: -670685563
+      bedrooms furniture -7closet-4 carpets- 18 beds _18: -397163392
+      bedrooms furniture -7closet-4 carpets- 18 beds _19: -1090301292
+      bedrooms furniture -7closet-4 carpets- 18 beds _2: 656632734
+      bedrooms furniture -7closet-4 carpets- 18 beds _20: -1305195479
+      bedrooms furniture -7closet-4 carpets- 18 beds _21: -1299828727
+      bedrooms furniture -7closet-4 carpets- 18 beds _22: 736083297
+      bedrooms furniture -7closet-4 carpets- 18 beds _23: -1784737120
+      bedrooms furniture -7closet-4 carpets- 18 beds _24: 683542149
+      bedrooms furniture -7closet-4 carpets- 18 beds _25: -1412113880
+      bedrooms furniture -7closet-4 carpets- 18 beds _26: -279902896
+      bedrooms furniture -7closet-4 carpets- 18 beds _3: 213371255
+      bedrooms furniture -7closet-4 carpets- 18 beds _4: 789287827
+      bedrooms furniture -7closet-4 carpets- 18 beds _5: -1357437072
+      bedrooms furniture -7closet-4 carpets- 18 beds _6: -1294943789
+      bedrooms furniture -7closet-4 carpets- 18 beds _7: 1107972027
+      bedrooms furniture -7closet-4 carpets- 18 beds _8: -892204203
+      bedrooms furniture -7closet-4 carpets- 18 beds _9: 2056327742
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
