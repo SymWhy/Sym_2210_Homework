@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace CatSim
 {
     public class PlayerController : MonoBehaviour
     {
+        [HideInInspector]
         private Rigidbody2D PlayerBody;
         private Camera MainCamera;
         private Animator PlayerAnimator;
 
+        private Tilemap InfoMap;
+
         private Vector2 PlayerPos;
         private Vector2 Target;
         private bool IsMoving = false;
+
+        private Vector3Int CellTarget;
 
         public float Speed = 1f;
 
@@ -21,7 +27,8 @@ namespace CatSim
         {
             PlayerBody = GetComponent<Rigidbody2D>();
             PlayerAnimator = GetComponent<Animator>();
-            MainCamera = Camera.main;
+
+            InfoMap = GameObject.Find("Info").GetComponent<Tilemap>();
 
             Target = transform.position;
         }
@@ -32,13 +39,16 @@ namespace CatSim
             if (Input.GetMouseButtonDown(0))
             {
                 Vector2 startPos = transform.position;
-                //get coords of mouse pointer
-                Vector2 mousePosRaw = Input.mousePosition;
-                //REMEMBER TO MARK YOUR CAMERA AS MAIN CAMERA OR YOU WILL GET AN ERROR
-                Vector2 mousePos = MainCamera.ScreenToWorldPoint(mousePosRaw);
+                
+                // Vector3 mousePos = GameManager.GetGameManager().MouseToWorld();
 
-                Target = new Vector2(mousePos.x, mousePos.y);
+                // Target = new Vector2(mousePos.x, mousePos.y);
 
+
+                CellTarget = GameObject.Find("Info").GetComponent<GetCellClicked>().LastCellClicked;
+                Target = InfoMap.GetCellCenterWorld(CellTarget);
+
+                
                 PlayerAnimator.SetFloat("XInput", Target.x - startPos.x);
                 PlayerAnimator.SetFloat("YInput", Target.y - startPos.y);
 
