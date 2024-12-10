@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f4c56e29e35fc40499175968a21a9c59
+guid: 23372206ee926054e9bfa276ce8a99b1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,34 +110,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tile_select_0
+      name: Spritesheet_UI_FillBar
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 82
-        height: 42
+        x: 448
+        y: 107
+        width: 32
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d394c9915ae607742adef4d4420365d9
-      internalID: -1136517902
+      spriteID: ff0fdcf2b9a089147ab758b2bbfde279
+      internalID: -664412008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile_select_1
+      name: Crusenho_UI_ExclamationPt
       rect:
         serializedVersion: 2
-        x: 83
-        y: 0
-        width: 82
-        height: 42
+        x: 562
+        y: 46
+        width: 6
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,29 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8b743498aa91204eb1cf962f66f79d2
-      internalID: -431492553
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile_select_2
-      rect:
-        serializedVersion: 2
-        x: 166
-        y: 0
-        width: 82
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a97534f0f284e884aaed48556ac3d0b7
-      internalID: -1992537231
+      spriteID: a31be27b7bba7cc4cb532f29eef1220a
+      internalID: -1422295561
       vertices: []
       indices: 
       edges: []
@@ -183,9 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tile_select_0: -1136517902
-      tile_select_1: -431492553
-      tile_select_2: -1992537231
+      Crusenho_UI_ExclamationPt: -1422295561
+      Spritesheet_UI_FillBar: -664412008
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

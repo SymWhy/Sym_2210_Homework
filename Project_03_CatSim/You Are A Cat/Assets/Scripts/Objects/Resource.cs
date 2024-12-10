@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Tilemaps;
 
 namespace CatSim
 {
@@ -33,27 +34,58 @@ namespace CatSim
 
         //gather necessary game resources
         private Rigidbody2D PlayerBody;
-        private AudioSource ResourceAudioSource;
+        public AudioSource EmptyAudioSource;
+        public AudioSource RefillAudioSource;
+        private SpriteRenderer spriteRenderer;
+
+        [SerializeField]
+        private Sprite SpriteFresh;
+        [SerializeField]
+        private Sprite SpriteUsed;
+        private Sprite CurrentSprite;
+
+        private Vector3Int MyCell;
 
         //records active state
-        protected ResourceState State;
+        public ResourceState state { get; private set; }
+
+        [SerializeField]
+        protected ResourceType type;
 
         // Start is called before the first frame update
         void Awake()
         {
+
             PlayerBody = GameObject.Find("Player").GetComponent<Rigidbody2D>();
-            //most interactibles will have a sound source
-            ResourceAudioSource = GetComponent<AudioSource>();
+
+            //record cell containing resource
+            MyCell = GameObject.Find("Grid").GetComponent<Grid>().WorldToCell(transform.position);
+
+            //grab the child sound sources attached to the resource
+            EmptyAudioSource = gameObject.transform.GetChild(0).GetComponent<AudioSource>();
+            RefillAudioSource = gameObject.transform.GetChild(1).GetComponent<AudioSource>();
+
+            //get the sprite renderer for rendering sprites
+            spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
             //starting with fresh resources
-            State = ResourceState.Fresh;
+            state = ResourceState.Fresh;
+
+            CurrentSprite = SpriteFresh;
+            spriteRenderer.sprite = CurrentSprite;
+
+            // Debug.Log("Current sprite is: " + CurrentSprite);
+        }
+
+        void Start()
+        {
         }
 
         // Update is called once per frame
         void Update()
         {
             //cancels activation if you move elsewhere
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && GameManager.GetGameManager().LastCellClicked != MyCell)
             {
                 if (GoingToResource == true)
                 {
@@ -62,36 +94,38 @@ namespace CatSim
             }
 
             //Do stuff on activation and change states
-            if (State == ResourceState.Active)
+            if (state == ResourceState.Active)
             {
                 StartCoroutine(WaitForActivation());
             }
+
         }
 
-        //Going and Arrived both start == false > OnPointerDown sets Going == true > OnTrigger sets Going == false and Arrived == true > WaitForActivation sets Arrived == false;
+        //Going and Arrived both should start == false > OnPointerDown sets Going == true > OnTrigger sets Going == false and Arrived == true > WaitForActivation 
+        //sets Arrived == false;
 
         //if player clicks on resource, move to it and prepare to change states
         void IPointerDownHandler.OnPointerDown(PointerEventData pointerEventData)
         {
-            if (State == ResourceState.Fresh)
+            if (state == ResourceState.Fresh)
             {
                 GoingToResource = true;
                 // Returning Going == true and Arrived == false
-                // Debug.Log("I am now going to the resource.");
-                // Debug.Log("GoingToResource = " + GoingToResource);
-                // Debug.Log("ArrivedAtResource = " + ArrivedAtResource);
-                State = ResourceState.Active;
-                Debug.Log(Name + " switching to state: " + State);
+                state = ResourceState.Active;
+                // Debug.Log(Name + " switching to state: " + State);
+            }
+            else
+            {
+                Debug.Log("It's empty!");
             }
         }
-
 
         //check if the player is moving to a resource and when they arrive
         void OnTriggerEnter2D(Collider2D col)
         {
-            if (col == PlayerBody)
+            if (col.GetComponent<Rigidbody2D>() == PlayerBody)
             {
-                Debug.Log("Detecting a collision with: " + col);
+                // Debug.Log("Detecting a collision with: " + col);
                 if (GoingToResource == true)
                 {
                     GoingToResource = false;
@@ -107,9 +141,38 @@ namespace CatSim
 
             //do all this and change states
             ArrivedAtResource = false;
-            ResourceAudioSource.Play();
-            State = ResourceState.Used;
-            Debug.Log(Name + " switching to state: " + State);
+
+                SwapSpriteToUsed();
+                EmptyAudioSource.Play();
+                state = ResourceState.Used;
+
+            //tell StatusSystem that the resource was activated
+            StatusSystem.OnResourceActivate(type);
+        }
+
+        public void ResetResource()
+        {
+            SwapSpriteToFresh();
+            state = ResourceState.Fresh;
+        }
+
+        private void SwapSpriteToFresh()
+        {
+            CurrentSprite = SpriteFresh;
+            spriteRenderer.sprite = CurrentSprite;
+        }
+
+        private void SwapSpriteToUsed()
+        {
+            CurrentSprite = SpriteUsed;
+            spriteRenderer.sprite = CurrentSprite;
+        }
+
+        public Vector3Int GetMyTile()
+        {
+            Vector3 myPos = transform.position;
+            Vector3Int myTile = GameManager.WorldGrid.WorldToCell(myPos);
+            return myTile;
         }
     }
 }
