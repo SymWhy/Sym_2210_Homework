@@ -13,6 +13,7 @@ namespace CatSim
         private Rigidbody2D NPCBody;
         private Animator NPCAnimator;
 
+        private GameObject Player;
         private Rigidbody2D PlayerBody;
 
         //presets
@@ -36,7 +37,8 @@ namespace CatSim
             NPCBody = GetComponent<Rigidbody2D>();
             NPCAnimator = GetComponent<Animator>();
 
-            PlayerBody = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+            Player = GameObject.Find("Player");
+            PlayerBody = Player.GetComponent<Rigidbody2D>();
 
 
             //initialize variables
@@ -87,6 +89,7 @@ namespace CatSim
         {
             if (collider.GetComponent<Rigidbody2D>() == PlayerBody && GoingToResource == true)
             {
+                Player.GetComponent<AudioSource>().Play();
                 if (resource.state == ResourceState.Used && StatusSystem.hungerState == HungerState.Hungry)
                 {
                     GoingToResource = false;
@@ -125,7 +128,7 @@ namespace CatSim
         {
             yield return new WaitUntil(() => ArrivedAtResource == true);
 
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(Player.GetComponent<AudioSource>().clip.length);
 
             if (myResource.state == ResourceState.Used)
             {
@@ -151,6 +154,7 @@ namespace CatSim
 
             //play audio
             myResource.RefillAudioSource.Play();
+            Debug.Log(myResource.RefillAudioSource);
 
             yield return new WaitForSeconds(myResource.RefillAudioSource.clip.length);
 

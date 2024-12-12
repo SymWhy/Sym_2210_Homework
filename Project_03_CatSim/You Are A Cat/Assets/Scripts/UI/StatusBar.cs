@@ -28,6 +28,7 @@ namespace CatSim
         void Update()
         {
             GetCurrentFill();
+            UpdateFill();
         }
 
         void GetCurrentFill()

@@ -16,7 +16,7 @@ namespace CatSim
         public static StatusBar hungerBar;
 
         [SerializeField]
-        private int Hungry = 50;
+        private int Hungry;
 
         public static int MaxStat { get; private set; }
 
@@ -34,6 +34,7 @@ namespace CatSim
             statusSystem = this;
             MaxStat = 100;
             Hunger = MaxStat;
+            Hungry = MaxStat / 2;
             hungerState = HungerState.Content;
 
             hungerBar = GameObject.Find("HungerBar").GetComponent<StatusBar>();
@@ -69,14 +70,11 @@ namespace CatSim
                 if (Hunger > 0)
                 {
                     Hunger -= 1;
-
-                    //decrease status bar
-                    hungerBar.UpdateFill();
                     
                     if (Hunger == Hungry)
                     {
                         hungerState = HungerState.Hungry;
-                        Debug.Log("Switching to state: " + hungerState);
+                        Debug.Log("I'm hungry!");
                     }
                 }
         }

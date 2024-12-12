@@ -15,7 +15,7 @@ namespace CatSim
 
         //global variables
         [SerializeField]
-        public static float TickDuration = 1f;
+        public static float TickDuration = 0.3f;
 
         //GameManager-specific variables
         public Vector3Int LastCellClicked { get; private set; }

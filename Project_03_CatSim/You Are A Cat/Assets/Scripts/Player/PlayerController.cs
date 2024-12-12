@@ -12,6 +12,7 @@ namespace CatSim
         private Rigidbody2D PlayerBody;
         private Camera MainCamera;
         private Animator PlayerAnimator;
+        public AudioSource PlayerAudioSource;
         private List<Vector2Int> ValidTiles;
 
         //presets
@@ -31,6 +32,7 @@ namespace CatSim
             //gather components
             PlayerBody = GetComponent<Rigidbody2D>();
             PlayerAnimator = GetComponent<Animator>();
+            PlayerAudioSource = GetComponent<AudioSource>();
 
             //initialize target
             Target = transform.position;
